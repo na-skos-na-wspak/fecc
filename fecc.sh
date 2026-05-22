@@ -3,17 +3,21 @@
 USER=$(whoami)
 # Grabs the distro name off of
 OS=$(cat /etc/os-release | awk -F'[/"]' '/PRETTY_NAME="/ {print $2}')
+# Grabs Hostname
 HOSTNAME=$(cat /proc/sys/kernel/hostname)
-KERNEL=$(uname -r)
-UPTIME=$(uptime -p | cut -d' ' -f2-)
+# Waz ur kernel
+KERNEL=$(uname -r | cut -d- -f1)
+# Pulls days, hours, and minutes from uptime
+UPTIME=$(uptime | awk -F"[ :,]" '/up/{print $6"d",$9"h",$10"m"}')
 if [ -e /etc/ipkg/installed ]; then
 	PKGS=$(cat /etc/ipkg/installed | wc -l)
 else
 	PKGS=2
 fi
-MEM1=$(free --mega | awk '/Mem:/ {print $3}')
-MEM2=$(free --mega | awk '/Mem:/ {print $2}')
+# Gets the used memory out of the total
+MEM=$(free --mega | awk '/Mem:/{print $3"m /",$2"m"}')
 
+# Colours for the output
 # yellow
 y='\e[0;33m'
 # red
@@ -27,11 +31,12 @@ nc='\e[0m'
 # bold
 bo='\e[1m'
 
+# Prints the info
 printf "$bo$c$USER\a@$HOSTNAME$nc
 $y$bo\aos$nc     $OS
 $y$bo\akernel$nc $KERNEL
 $y$bo\auptime$nc $UPTIME
 $y$bo\apkgs$nc   $PKGS
-$y$bo\amem$nc    $MEM1\am / $MEM2\am
+$y$bo\amem$nc    $MEM
 $r🭹🭹🭹🭹🭹🭹🭹🭹🭹$y🭹🭹🭹🭹🭹🭹🭹🭹🭹$p🭹🭹🭹🭹🭹🭹🭹🭹🭹$nc
 "
