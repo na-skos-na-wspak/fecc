@@ -38,5 +38,5 @@ $y$bo\akernel$nc $KERNEL
 $y$bo\auptime$nc $UPTIME
 $y$bo\apkgs$nc   $PKGS
 $y$bo\amem$nc    $MEM
-$r🭹🭹🭹🭹🭹🭹🭹🭹🭹$y🭹🭹🭹🭹🭹🭹🭹🭹🭹$p🭹🭹🭹🭹🭹🭹🭹🭹🭹$nc
+$r🭹🭹🭹🭹🭹🭹🭹$y🭹🭹🭹🭹🭹🭹🭹$p🭹🭹🭹🭹🭹🭹🭹$nc
 "
