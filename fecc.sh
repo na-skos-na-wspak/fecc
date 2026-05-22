@@ -8,7 +8,7 @@ HOSTNAME=$(cat /proc/sys/kernel/hostname)
 # Waz ur kernel
 KERNEL=$(uname -r | cut -d- -f1)
 # Pulls days, hours, and minutes from uptime
-UPTIME=$(uptime | awk -F"[ :,]" '/up/{print $6"d",$9"h",$10"m"}')
+UPTIME=$(awk '{print int($1/86400)"d "int($1%86400/3600)"h "int(($1%3600)/60)"m "}' /proc/uptime)
 if [ -e /etc/ipkg/installed ]; then
 	PKGS=$(cat /etc/ipkg/installed | wc -l)
 else
