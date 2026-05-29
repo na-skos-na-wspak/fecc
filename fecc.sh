@@ -32,7 +32,7 @@ nc='\e[0m'
 bo='\e[1m'
 
 # Prints the info
-printf "$bo$c$USER\a@$HOSTNAME$nc
+printf "$c$bo$USER\a@$HOSTNAME$nc
 $y$bo\aos$nc     $OS
 $y$bo\akernel$nc $KERNEL
 $y$bo\auptime$nc $UPTIME
