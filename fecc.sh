@@ -34,13 +34,13 @@ nc='\e[0m'
 bo='\e[1m'
 
 # Prints the info
-printf "$b$bo    ___     
-$bo   ($nc$bo\a..$b$bo |    $c$bo\a$USER\a@$HOSTNAME$nc
-$b$bo   ($y$bo\a<>$b$bo |    $y$bo\aos$nc     $OS
-$b$bo  /$nc$bo __$b$bo  \   $y$bo\akernel$nc $KERNEL
-$b$bo ($nc$bo /  \ $b$bo\a/|  $y$bo\auptime$nc $UPTIME
-$y$bo\a_$b$bo/\ $nc$bo\a__)$b$bo\a/$y$bo\a_$b$bo\a)  $y$bo\apkgs$nc   $PKGS
-$y$bo\a\/$b$bo\a-____$y$bo\a\/$nc   $y$bo\amem$nc    $MEM
-$r🭹🭹🭹🭹🭹🭹🭹🭹🭹🭹🭹$y🭹🭹🭹🭹🭹🭹🭹🭹🭹🭹🭹$p🭹🭹🭹🭹🭹🭹🭹🭹🭹🭹🭹$nc
+printf " $b$bo    ___     
+ $bo   ($nc$bo\a..$b$bo |    $c$bo\a$USER\a@$HOSTNAME$nc
+ $b$bo   ($y$bo\a<>$b$bo |    $y$bo\aos$nc     $OS
+ $b$bo  /$nc$bo __$b$bo  \   $y$bo\akernel$nc $KERNEL
+ $b$bo ($nc$bo /  \ $b$bo\a/|  $y$bo\auptime$nc $UPTIME
+ $y$bo\a_$b$bo/\ $nc$bo\a__)$b$bo\a/$y$bo\a_$b$bo\a)  $y$bo\apkgs$nc   $PKGS
+ $y$bo\a\/$b$bo\a-____$y$bo\a\/$nc   $y$bo\amem$nc    $MEM
+ $r🭹🭹🭹🭹🭹🭹🭹🭹🭹🭹🭹$y🭹🭹🭹🭹🭹🭹🭹🭹🭹🭹🭹$p🭹🭹🭹🭹🭹🭹🭹🭹🭹🭹🭹$nc
 
 "
