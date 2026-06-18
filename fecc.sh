@@ -2,7 +2,11 @@
 # Grabs info
 USER=$(whoami)
 # Grabs the distro name off of
-OS=$(cat /etc/os-release | awk -F'[/"]' '/PRETTY_NAME="/ {print $2}')
+OS=$(awk -F'[/"]' '/PRETTY_NAME="/ {print $2}' /etc/os-release)
+# If the distro uses single quotes then grab the distro name from that
+if [ -n $OS ]; then
+	OS=$(awk -F"'" '/PRETTY_NAME=/ {print $2}' /etc/os-release)
+fi
 # Grabs Hostname
 HOSTNAME=$(cat /proc/sys/kernel/hostname)
 # Waz ur kernel
